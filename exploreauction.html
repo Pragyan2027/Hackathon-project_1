@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Explore Auctions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background: #111; color: #eee; margin: 0; font-family: sans-serif; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .header { border-bottom: 1px solid #333; padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+    .header .title { font-size: 2rem; font-weight: bold; color: #adeeff; }
+    .sidebar { background: #191919; padding: 1rem; border-radius: 8px; }
+    .sidebar h2 { font-size: 1.2rem; margin-top:0; }
+    .category-list, .stats, .auction-grid { margin: 1rem 0; }
+    .category-list button { background: #222; color: #fff; border: none; padding: 0.5rem; margin: 0.2rem 0; width: 100%; border-radius: 4px; text-align: left; }
+    .category-list button.selected { background: #23e3c5; color: #111; }
+    .stats { display: flex; gap: 1rem; }
+    .stat-card { flex:1; background: #181827; padding: 1rem; border-radius: 6px; text-align: center; }
+    .auction-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 1.5rem;}
+    .auction-card { background: #181836; border-radius: 8px; padding: 1rem; }
+    .auction-img { width: 100%; border-radius: 6px; }
+    .tabs { display: flex; gap: 1rem; margin:1rem 0;}
+    .tab { padding: 0.5rem 1rem; background: #222; border-radius: 4px; color: #fff;}
+    .tab.active { background: #23e3c5; color: #111;}
+    .live-activity, .recommendations { background: #15151e; padding: 1rem; border-radius: 8px; margin: 1rem 0;}
+    @media(max-width: 900px) {
+      .stats { flex-direction: column; }
+      .auction-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width:600px) {
+      .container { padding:0 0.5rem;}
+      .header .title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="title">Explore Auctions</div>
+      <p>Discover amazing items from sellers worldwide</p>
+      <input type="text" placeholder="Search auctions..." style="width:70%;padding:0.5rem;margin:1rem 0;"/>
+    </div>
+    <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+      <!-- Sidebar -->
+      <aside style="flex:1 1 220px;min-width:220px;">
+        <div class="sidebar">
+          <h2>Categories</h2>
+          <div class="category-list">
+            <button class="selected">All Categories (1247)</button>
+            <button>Electronics (342)</button>
+            <button>Vehicles (89)</button>
+            <button>Home & Garden (156)</button>
+            <button>Art & Collectibles (78)</button>
+            <button>Music & Instruments (45)</button>
+            <button>Books & Media (123)</button>
+            <button>Gaming (67)</button>
+            <button>Watches (34)</button>
+            <button>Jewelry (56)</button>
+            <button>Fashion (189)</button>
+          </div>
+        </div>
+        <div class="live-activity">
+          <h2>Live Activity</h2>
+          <div>TechBuyer bid $850 on Vintage MacBook Pro (2m ago)</div>
+          <div>Collector01 outbid $250 on Circuit Board Set (5m ago)</div>
+          <div>GamerPro bid $1500 on Gaming Setup (8m ago)</div>
+          <div>ArtLover won $420 on Vintage Camera (12m ago)</div>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main style="flex:4 1 600px">
+        <!-- Quick Stats -->
+        <div class="stats">
+          <div class="stat-card"><div style="font-size:2rem">1,247</div><div>Active Auctions</div></div>
+          <div class="stat-card"><div style="font-size:2rem">89</div><div>Ending Today</div></div>
+          <div class="stat-card"><div style="font-size:2rem">156</div><div>New This Week</div></div>
+          <div class="stat-card"><div style="font-size:2rem">12</div><div>Featured</div></div>
+        </div>
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab active">Live</div>
+          <div class="tab">Ending Soon</div>
+          <div class="tab">New Listings</div>
+          <div class="tab">Featured</div>
+          <div class="tab">For You</div>
+        </div>
+        <!-- Auction Grid (For demonstration: Live Auctions) -->
+        <div class="auction-grid">
+          <div class="auction-card">
+            <img class="auction-img" src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=300&fit=crop" alt="MacBook"/>
+            <div style="font-weight:bold;">Vintage MacBook Pro 2019</div>
+            <div>Current Bid: $850 | 23 bids | 2h 45m left</div>
+            <div>Seller: TechCollector</div>
+          </div>
+          <div class="auction-card">
+            <img class="auction-img" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop" alt="Office"/>
+            <div style="font-weight:bold;">Modern Office Setup</div>
+            <div>Current Bid: $1200 | 15 bids | 1d 12h left</div>
+            <div>Seller: OfficeGuru</div>
+          </div>
+          <div class="auction-card">
+            <img class="auction-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" alt="Circuit Boards"/>
+            <div style="font-weight:bold;">Circuit Board Collection</div>
+            <div>Current Bid: $250 | 8 bids | 5h 20m left</div>
+            <div>Seller: ElectronicsHub</div>
+          </div>
+        </div>
+        <!-- Recommendations & Watchlist -->
+        <div class="recommendations">
+          <h2>Recommended for You</h2>
+          <p>AI-powered suggestions based on your interests.</p>
+          <div>- Gaming Laptop Setup<br>- Remote Work Station<br>- Vintage Watch</div>
+        </div>
+        <div class="recommendations">
+          <h2>Your Watchlist</h2>
+          <p>- Circuit Board Collection<br>- Modern Office Setup</p>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
